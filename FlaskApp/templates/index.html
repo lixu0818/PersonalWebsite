@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" media="screen" href = "{{ url_for('static', filename='mystyle.css') }}" >
+
+<head>
+<meta name="google-site-verification" content="7_kWps6Lt5R0ZbdViYC_nCPHcl_p_EWOgZ2bxaoihIU" /> 
+<title>Li (Lily) Xu</title>
+<h2>Li (Lily) Xu</h2>
+	<img src="{{ url_for('static', filename = '/img/cornell.png')}}" alt="The official HTML5 Icon" style="width:230px", height="58", align="right">
+</head>
+
+<body class = "body">
+	<h2>
+		<span class="label label-default" style="color:white">
+	   &nbsp biology + data analysis + programming = 
+		</span>
+		<img src="{{ url_for('static', filename = '/img/addiction-cure.jpg')}}" alt="The official HTML5 Icon" style="width:120px">
+	</h2>
+	
+	
+	<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Home</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+	    <li><a href="/skills">Skills</a></li>
+        <li><a href="/course">Courses</a></li>
+        <li><a href="/research">Research</a></li>
+		<li><a href="/projects">Projects</a></li>
+		<li><a href="/publications">Publications</a></li>
+        
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+	
+	<body>
+		<h3>{{ title }}</h3>
+		{% for p in paragraph %}
+		<p>{{ p }}</p>
+		{% endfor %}
+		
+		{% if pageType == 'about' %}
+		<p></p>
+		{% else %}
+		<p></p>
+		{% endif %}
+		
+		{% block body %}
+		{% endblock %}
+	</body>
+</body>
+
+<script src = "//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type = "text/javascript" src = "/static/bootstrap.min.js"></script>
+
+</html>
